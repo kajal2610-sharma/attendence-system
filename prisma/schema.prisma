@@ -1,0 +1,71 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  name     String?
+  email    String  @unique
+  password String
+  role     String
+
+  course     String?
+  semester   String?
+  section    String?
+  rollNumber String?
+
+  posts Post[]
+
+  attendanceAsStudent Attendance[] @relation("StudentAttendance")
+  attendanceAsTeacher Attendance[] @relation("TeacherAttendance")
+  timetables Timetable[]
+}
+
+model Post {
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  title     String
+  content   String?
+  published Boolean @default(false)
+
+  author   User   @relation(fields: [authorId], references: [id])
+  authorId String @db.ObjectId
+}
+
+model Attendance {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  studentId String @db.ObjectId
+  teacherId String @db.ObjectId
+
+  date DateTime
+
+  course   String?
+  semester String?
+  section  String?
+  subject  String?
+  status   String
+
+  student User @relation("StudentAttendance", fields: [studentId], references: [id])
+  teacher User @relation("TeacherAttendance", fields: [teacherId], references: [id])
+
+  createdAt DateTime @default(now())
+}
+model Timetable {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  subject   String
+  course    String
+  semester  String
+  section   String?
+  day       String
+  startTime String
+  endTime   String
+  room      String?
+  teacherId String   @db.ObjectId
+
+  teacher   User     @relation(fields: [teacherId], references: [id])
+}
