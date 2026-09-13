@@ -120,7 +120,7 @@ export default function RegisterPage() {
                 <input
                   type="text"
                   placeholder="Enter your full name"
-                  className="w-full border border-slate-200 bg-slate-50 px-4 py-3 rounded-xl outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition"
+                  className="w-full border border-slate-200 bg-slate-50 px-4 py-3 rounded-xl outline-none text-black focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   required
@@ -135,7 +135,7 @@ export default function RegisterPage() {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="w-full border border-slate-200 bg-slate-50 px-4 py-3 rounded-xl outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition"
+                  className="w-full border text-black border-slate-200 bg-slate-50 px-4 py-3 rounded-xl outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -157,7 +157,7 @@ export default function RegisterPage() {
                   <input
                     type={showPassword ? "text" : "password"}
                     placeholder="Create a password"
-                    className="w-full border border-slate-200 bg-slate-50 px-4 py-3 pr-12 rounded-xl outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition"
+                    className="w-full border text-black border-slate-200 bg-slate-50 px-4 py-3 pr-12 rounded-xl outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
