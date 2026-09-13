@@ -276,7 +276,7 @@ async function logout() {
                     onChange={(e) =>
                       setName(e.target.value)
                     }
-                    className={`w-full border border-slate-300 rounded-lg p-3 ${
+                    className={`w-full border border-slate-300 text-black rounded-lg p-3 ${
                       editing
                         ? "bg-white focus:ring-2 focus:ring-blue-500 outline-none"
                         : "bg-slate-50"
@@ -303,7 +303,7 @@ async function logout() {
                     onChange={(e) =>
                       setEmail(e.target.value)
                     }
-                    className={`w-full border border-slate-300 rounded-lg p-3 ${
+                    className={`w-full border border-slate-300 text-black rounded-lg p-3 ${
                       editing
                         ? "bg-white focus:ring-2 focus:ring-blue-500 outline-none"
                         : "bg-slate-50"
@@ -323,7 +323,7 @@ async function logout() {
                     type="text"
                     value={teacher.role}
                     readOnly
-                    className="w-full border border-slate-300 rounded-lg p-3 bg-slate-50 capitalize"
+                    className="w-full border border-slate-300 text-black rounded-lg p-3 bg-slate-50 capitalize"
                   />
 
                 </div>
