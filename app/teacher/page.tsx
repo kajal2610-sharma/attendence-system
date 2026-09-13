@@ -40,7 +40,7 @@ export default function TeacherDashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-100">
+    <div className="min-h-screen bg-slate-100 text-black">
 
       {/* TOP NAVBAR */}
       <header className="bg-white border-b sticky top-0 z-10">
